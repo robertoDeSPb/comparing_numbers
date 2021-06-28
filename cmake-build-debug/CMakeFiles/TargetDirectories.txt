@@ -1,0 +1,3 @@
+D:/c++/Home Task 11/comparing_numbers/cmake-build-debug/CMakeFiles/comparing_numbers.dir
+D:/c++/Home Task 11/comparing_numbers/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/c++/Home Task 11/comparing_numbers/cmake-build-debug/CMakeFiles/rebuild_cache.dir
