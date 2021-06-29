@@ -128,13 +128,25 @@ std::string comparing(std::string number1,std::string number2) {
                         }
                     }
                 }
-                for (int k = 0; k < number_1.length(); k++) {
-                    if (number_1[k] > number_2[k]) {
-                        more = true;
-                        return "More";
-                    } else if (number_1[k] < number_2[k]) {
-                        less = true;
-                        return "Less";
+                if (number1[0] != '-' && number2[0] != '-') {
+                    for (int k = 0; k < number_1.length(); k++) {
+                        if (number_1[k] > number_2[k]) {
+                            more = true;
+                            return "More";
+                        } else if (number_1[k] < number_2[k]) {
+                            less = true;
+                            return "Less";
+                        }
+                    }
+                } else if (number1[0] == '-' && number2[0] == '-') {
+                    for (int k = 0; k < number_1.length(); k++) {
+                        if (number_1[k] > number_2[k]) {
+                            less = true;
+                            return "Less";
+                        } else if (number_1[k] < number_2[k]) {
+                            more = true;
+                            return "More";
+                        }
                     }
                 }
             }
@@ -148,7 +160,6 @@ int main() {
     std::cin >> number1;
     std::cout << "Input number 2: ";
     std::cin >> number2;
-
 
     std::cout << comparing(number1, number2);
 }
