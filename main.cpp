@@ -78,13 +78,38 @@ std::string comparing(std::string number1,std::string number2) {
     bool more = false;
     bool less = false;
     std::string number_1, number_2;
+    bool zero = true;
     if (correct(number1) == 0 || correct(number2) == 0) {
         return "Incorrect\n";
     } else {
         if (number1[0] == '-' && number2[0] != '-') {
-            return "Less\n";
+            for (int i = 1; i < number1.length(); i++) {
+                if (number1[i] != '0' && number1[i] != '.') {
+                    zero = false;
+                    return "Less\n";
+                }
+            }
+            for (int i = 0; i < number2.length(); i++) {
+                if (number2[i] != '0' && number2[i] != '.') {
+                    zero = false;
+                    return "Less\n";
+                }
+            }
+            if (zero = true) return "Equal";
         } else if (number1[0] != '-' && number2[0] == '-') {
-            return "More\n";
+            for (int i = 0; i < number1.length(); i++) {
+                if (number1[i] != '0' && number1[i] != '.') {
+                    zero = false;
+                    return "More\n";
+                }
+            }
+            for (int i = 1; i < number2.length(); i++) {
+                if (number2[i] != '0' && number2[i] != '.') {
+                    zero = false;
+                    return "More\n";
+                }
+            }
+            if (zero = true) return "Equal";
         } else {
             for (int i = 0; i < 2; i++) {
                 number_1 = partition(number1, i);
